@@ -1,11 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 :root {
-  --input-padding-x: .75rem;
-  --input-padding-y: .75rem;
+  --input-padding-x: 0.75rem;
+  --input-padding-y: 0.75rem;
 }
 
 html,
 body {
   height: 100%;
+  font-family: "Rubik", sans-serif;
 }
 
 body {
@@ -28,6 +31,17 @@ body {
   max-width: 420px;
   padding: 15px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-login {
+  border-radius: 1rem;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(184, 250, 162, 1) 100%
+  );
 }
 
 .form-label-group {
@@ -50,8 +64,8 @@ body {
   line-height: 1.5;
   color: #495057;
   border: 1px solid transparent;
-  border-radius: .25rem;
-  transition: all .1s ease-in-out;
+  border-radius: 0.25rem;
+  transition: all 0.1s ease-in-out;
 }
 
 .form-label-group input::-webkit-input-placeholder {
@@ -74,14 +88,37 @@ body {
   color: transparent;
 }
 
-.form-label-group input:not(:placeholder-shown) {
-  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
-  padding-bottom: calc(var(--input-padding-y) / 3);
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.form-label-group input:not(:placeholder-shown) ~ label {
-  padding-top: calc(var(--input-padding-y) / 3);
-  padding-bottom: calc(var(--input-padding-y) / 3);
-  font-size: 12px;
-  color: #777;
+.form-container {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+}
+
+#logo {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  #logo {
+    width: 50%;
+    height: 50%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.label-form {
+  align-self: center;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
 }
