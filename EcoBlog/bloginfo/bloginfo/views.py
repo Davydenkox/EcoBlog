@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.views.generic.base import TemplateView
 
-from apps.productos.models import Producto
+from apps.post.models import Post
 
 """
 # Inicio basado en funcion
@@ -19,6 +19,6 @@ class Inicio(TemplateView):
 	
 	def get_context_data(self, **kwargs):
 		context = super(Inicio, self).get_context_data(**kwargs)
-		context["productos"] = Producto.objects.all()
+		context["post"] = Post.objects.all()
 		return context
 	
