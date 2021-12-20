@@ -7,6 +7,6 @@ from .models import Comentario
 
 
 class comentarioAdmin(admin.ModelAdmin):
-    list_display = ('autor','detalle', 'posteo')
+    list_display = ('autor','detalle')
 
 admin.site.register(Comentario,comentarioAdmin)

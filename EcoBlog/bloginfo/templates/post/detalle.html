@@ -1,25 +1,39 @@
 {% extends "base/base.html" %}
+{% load static %}
 
 {% block contenido %}
-<div class="container-fluid pb-3">
-    <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
-        <div class="bg-light border rounded-3">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+	<div class="card mb-3">
+	  	<div class="row g-0">
+		    
+		    <div class="col-md-7">
+		      	<div class="card-body">
+                    
 
-        </div>
-        <div class="bg-light border rounded-3">
-            <div class="card-body">
-                <p class="card-text">{{p.nombre}}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                        <!--<button type="button" class="btn btn-sm btn-outline-secondary">View</button>-->
-                        <a class="btn btn-sm btn-outline-secondary" href="{% url 'post:detalle' %}">Ver mas</a>
-                  </div>
-                  <!--<small class="text-muted">9 mins</small>-->
-                </div>
-          </div>
-          <br><br>
-        </div>
-    </div>
-</div>
+                    <p class="card-text">{{post.nombre}}</p>
+			        <p class="card-text"><small class="text-muted"><span class="badge bg-primary">{{post.autor}}</span></small></p>
+
+                    <p class="card-text">{{post.detalle}}.</p>
+                    <div class="row">
+                        <div class="col">
+                            {% for p in post.comentarios.all %}
+                                <p class="card-text">{{p.autor}}.</p>
+                                <p class="card-text">{{p.detalle}}.</p>
+                                <p class="card-text">{{p.estado}}.</p>
+                            
+                            {% empty %}
+                                Aun no hay comentarios
+                            {% endfor %}
+                            <p class="card-text">agregar comentario  </p>
+                        </div>
+                        
+                     </div>
+
+                  
+
+		      	</div>
+		    </div>
+
+		  
+	  	</div>
+	</div>
 {% endblock contenido %}

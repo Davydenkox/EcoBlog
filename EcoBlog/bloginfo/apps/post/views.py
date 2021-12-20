@@ -5,13 +5,10 @@ from django.shortcuts          import render
 from django.urls               import reverse_lazy
 from django.views.generic      import ListView, CreateView 
 from django.views.generic.edit import UpdateView
-
+from django.views.generic.detail import DetailView
 from .forms  import PostForm
 from .models import Post
 
-def detalle(request):
-	context = {}
-	return render(request, "post/detalle.html", context)
 
 
 
@@ -52,3 +49,8 @@ class EditarAdmin(UpdateView):
 	def get_success_url(self, **kwargs):
 		return reverse_lazy("post:admin_listar")
 	
+class Detalle(DetailView):
+	template_name = "post/detalle.html"
+	model = Post
+	
+

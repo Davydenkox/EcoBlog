@@ -5,7 +5,9 @@ from ..post import views
 app_name = "post"
 
 urlpatterns = [
-	path("Detalle/", views.detalle, name="detalle"),
+	#path("Detalle/", views.detalle, name="detalle"),
+	path("Detalle/<int:pk>/", views.Detalle.as_view(), name="detalle"),
+	path("Detalle/<int:pk>/comentario", views.Detalle.as_view(), name="comentario"),
 	#path("Detalle/<int:pk>/", views.detalle1, name="detalle_pk"),
 	
 	# Admin
