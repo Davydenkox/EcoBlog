@@ -8,9 +8,9 @@ class Post(models.Model):
 	detalle = models.TextField(max_length=1000)
 	autor = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True)
 	estado = models.IntegerField(null=True)
-	categoria = models.OneToOneField(Categoria, on_delete=models.CASCADE, null=True)
+	categoria = models.ManyToManyField(Categoria, null=True)
 	
-	comentarios = models.ManyToManyField(Comentario)
+	comentarios = models.ManyToManyField(Comentario,null=True, blank=True)
 
 	class Meta:
 		db_table="post"
