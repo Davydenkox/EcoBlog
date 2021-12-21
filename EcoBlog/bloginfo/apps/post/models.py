@@ -1,6 +1,6 @@
 from django.db import models
 from apps.usuarios.models import Usuario
-from apps.comentario.models import Comentario
+#from apps.comentario.models import Comentario
 from apps.categoria.models import Categoria
 
 class Post(models.Model):
@@ -8,9 +8,9 @@ class Post(models.Model):
 	detalle = models.TextField(max_length=1000)
 	autor = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True)
 	estado = models.IntegerField(null=True)
-	categoria = models.ManyToManyField(Categoria, null=True)
+	categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=True,blank=True)
 	
-	comentarios = models.ManyToManyField(Comentario,null=True, blank=True)
+	#comentarios = models.ManyToManyField(Comentario,null=True, blank=True)
 
 	class Meta:
 		db_table="post"

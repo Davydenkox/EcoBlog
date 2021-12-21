@@ -1,5 +1,5 @@
 from django.db import models
-from apps.comentario.models import Comentario
+#from apps.comentario.models import Comentario
 
 
 class Categoria(models.Model):
