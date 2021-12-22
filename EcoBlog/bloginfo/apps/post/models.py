@@ -6,9 +6,9 @@ from apps.categoria.models import Categoria
 class Post(models.Model):
 	nombre = models.CharField(max_length=255)
 	detalle = models.TextField(max_length=1000)
-	autor = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True)
-	estado = models.IntegerField(null=True)
-	categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=True,blank=True)
+	autor = models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True,blank=True)
+	estado = models.BooleanField(default=False,null=True,blank=True)
+	categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE,null=True,blank=True)
 	
 	#comentarios = models.ManyToManyField(Comentario,null=True, blank=True)
 

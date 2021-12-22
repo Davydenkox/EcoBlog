@@ -8,4 +8,4 @@ class PostForm(forms.ModelForm):
 	detalle = forms.CharField(widget=forms.Textarea)
 	class Meta:
 		model = Post
-		fields = ["nombre", "detalle","autor","estado","categoria"]
+		fields = ["nombre", "detalle","estado","categoria"]
