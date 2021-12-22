@@ -1,0 +1,15 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block contenido %}
+<h1 class="text-center titulo pb-3">AGREGAR COMENTARIOS A UN POST</h1>
+
+    {% for p in comentarios  %}
+    <p class="card-text"><small class="text-muted"><span class="badge bg-primary">{{p.autor}}</span></small></p>
+    <h1 class="text-center titulo pb-3"> {{p}} </h1>
+        {% if p.posteo is request.get_full_path %}
+            {{request.get_full_path}}
+
+        {% endif %}
+    {% endfor %}
+{% endblock contenido %}

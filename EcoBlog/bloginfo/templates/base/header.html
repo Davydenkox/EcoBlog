@@ -9,16 +9,14 @@
 
           {% if user.es_escritor %}
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item active" href="#" aria-current="page">Overview</a></li>
-            <li><a class="dropdown-item" href="#">Inventory</a></li>
-            <li><a class="dropdown-item" href="#">Customers</a></li>
-            <li><a class="dropdown-item" href="#">Products</a></li>
+            <li><a class="dropdown-item" href="{% url 'post:nuevoPost' %}">crear un nuevo post como escritor</a></li>
+            <li><a class="dropdown-item" href="#">ver mis post</a></li>
           {% endif %}
         
           {% if user.es_administrador %}
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Reports</a></li>
-            <li><a class="dropdown-item" href="#">Analytics</a></li>
+            <li><a class="dropdown-item" href="#">ver todos los post como admin</a></li>
+            <li><a class="dropdown-item" href="#">eliminar algun post</a></li>
           {% endif %}
             <li><hr class="dropdown-divider"></li>
 

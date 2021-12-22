@@ -12,19 +12,13 @@
                     <p class="card-text">{{post.nombre}}</p>
 			        <p class="card-text"><small class="text-muted"><span class="badge bg-primary">{{post.autor}}</span></small></p>
                     <p class="card-text"><small class="text-muted"><span class="badge bg-primary">Categoria: {{post.categoria}}</span></small></p>
-
+                    
                     <p class="card-text">{{post.detalle}}.</p>
                     <div class="row">
                         <div class="col">
-                            {% for p in post.comentarios.all %}
-                                <p class="card-text">{{p.autor}}.</p>
-                                <p class="card-text">{{p.detalle}}.</p>
-                                <p class="card-text">{{p.estado}}.</p>
-                            
-                            {% empty %}
-                                Aun no hay comentarios
-                            {% endfor %}
-                            <p class="card-text">agregar comentario  </p>
+                            {% include "includes/prueba.html" %}
+                            <a class="btn btn-sm btn-outline-secondary" href="{% url 'post:vercomentarios' post.id %}">Ver Comentario</a>
+							<a class="btn btn-sm btn-outline-secondary" href="{% url 'post:comentarios' post.id %}">Agregar Comentario</a>
                         </div>
                         
                      </div>
